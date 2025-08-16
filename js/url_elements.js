@@ -13,20 +13,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     const outputElement = document.getElementById(OUTPUT);
     const buttonElement = document.getElementById(BUTTON);
 
-    if (!elementsExist()){
-        console.error(ERROR_DOM_ELEMENTS);
-        return;
+    async function fillInputWithStoredURL() {
+        inputElement.value = await getURL();
+        await updateOutput();
     }
 
-    inputElement.value = await getURL();
-    await updateOutput();
+    function setButtonLogic() {
+        buttonElement.addEventListener("click", async () => {
+            const inputFieldValue = inputElement.value.trim() || DEFAULT_URL
 
-    buttonElement.addEventListener("click", async () => {
-        const inputFieldValue = inputElement.value.trim() || DEFAULT_URL
-
-        await setURL(inputFieldValue);
-        await updateOutput();
-    });
+            await setURL(inputFieldValue);
+            await updateOutput();
+        });
+    }
 
     async function updateOutput() {
         try {
@@ -36,7 +35,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
-    function elementsExist(){
+    function elementsExist() {
         return (inputElement && outputElement && buttonElement);
     }
+
+    if (!elementsExist()) {
+        console.error(ERROR_DOM_ELEMENTS);
+        return;
+    }
+
+    await fillInputWithStoredURL();
+    setButtonLogic()
 });
