@@ -1,0 +1,38 @@
+:root {
+    --color-primary: #999999;
+    --color-secondary: #555555;
+    --color-accent: #FFFFFF;
+    --color-background: #000000;
+    --color-text: #BBBBBB;
+    --color-accent-red: #FF0000;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Roboto Mono", "Courier New", monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+h1, h2{
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #ffffff33, 0 0 20px #ffffff22;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 1em;
+}

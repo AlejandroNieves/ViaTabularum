@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "ViaTabularum@anh"
+    }
+  },
+  "name": "ViaTabularum",
+  "version": "1.2",
+  "description": "A very simple addon to control where new tabs redirect to.",
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "icons": {
+    "48": "icons/icon_viatabularum.png"
+  },
+  "action": {
+    "theme_icons": [{
+      "dark": "icons/icon_viatabularum.png",
+      "light": "icons/icon_viatabularum.png",
+      "size": 16
+    }, {
+      "dark": "icons/icon_viatabularum.png",
+      "light": "icons/icon_viatabularum.png",
+      "size": 32
+    }],
+    "default_popup": "via_tabularum.html",
+    "default_title": "Via Tabularum"
+  }
+
+}

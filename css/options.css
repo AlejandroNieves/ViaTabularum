@@ -1,0 +1,121 @@
+:root {
+    --color-primary: #999999;
+    --color-secondary: #555555;
+    --color-accent: #FFFFFF;
+    --color-background: #000000;
+    --color-text: #BBBBBB;
+    --color-accent-red: #FF0000;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    font-family: "Roboto Mono", "Courier New", monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title, .subtitle{
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+
+.organizer{
+    border: var(--color-primary) solid 2px;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 512px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+}
+
+.organizer > *{
+    width: 100%;
+}
+
+.field-button{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.field-button > * {
+    min-height: 32px;
+}
+
+.field-button > label{
+    display: none;
+}
+
+.prompt {
+    border-radius: 5px;
+    flex: 3 1 25%;
+    background-color: black;
+    font-size: 1rem;
+    text-align: left;
+    border: var(--color-primary) solid 2px;
+    color: var(--color-primary);
+}
+
+.button {
+    border-radius: 5px;
+    flex: 1 1 25%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border: var(--color-primary) solid 2px;
+    color: var(--color-primary);
+}
+
+.interactive {
+    transition: all 0.3s ease; /* Smooth transition for the glow effect */
+    cursor: pointer;
+}
+
+.interactive:hover {
+    background-color: black;
+    color: var(--color-accent);
+    border: var(--color-accent) solid 2px;
+    box-shadow: 0 0 16px 4px var(--color-accent);
+}
+
+.interactive:focus{
+    border: var(--color-accent) solid 2px;
+    box-shadow: 0 0 16px 4px var(--color-accent);
+}
+
+.interactive:active{
+    background-color: var(--color-accent);
+    color: var(--color-background);
+    border: var(--color-background) solid 2px;
+}
+
+.information-section{
+    margin-top: 10px;
+    display:flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.information-section > * {
+    flex: 1 1 25%;
+    margin: 0;
+}
+
+.version-sticker{
+    text-align: right;
+}
+
+.madeby-sticker{
+    text-align: left;
+}
+
