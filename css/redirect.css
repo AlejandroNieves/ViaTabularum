@@ -1,9 +1,10 @@
 :root {
-    --color-primary: #999999;
-    --color-secondary: #555555;
-    --color-accent: #FFFFFF;
-    --color-background: #000000;
-    --color-text: #BBBBBB;
+    --color-primary: #008333;
+    --color-secondary: #005722;
+    --color-accent: #51FF95;
+    --color-background-a: #082E20;
+    --color-background-b: #004030;
+    --color-text: #BBEEBB;
     --color-accent-red: #FF0000;
 }
 
@@ -11,8 +12,8 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #000000;
-    color: #ffffff;
+    background-image: linear-gradient(var(--color-background-a), var(--color-background-b));
+    color: var(--color-text);
     font-family: "Roboto Mono", "Courier New", monospace;
     display: flex;
     flex-direction: column;
@@ -27,6 +28,9 @@ h1, h2{
     letter-spacing: 0.2em;
     text-transform: uppercase;
     text-shadow: 0 0 10px #ffffff33, 0 0 20px #ffffff22;
+    font-family: "Platypi", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
 }
 
 h1 {

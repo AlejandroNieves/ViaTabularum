@@ -1,18 +1,23 @@
 :root {
-    --color-primary: #999999;
-    --color-secondary: #555555;
-    --color-accent: #FFFFFF;
-    --color-background: #000000;
-    --color-text: #BBBBBB;
+    --color-primary: #008333;
+    --color-secondary: #005722;
+    --color-accent: #51FF95;
+    --color-background-a: #082E20;
+    --color-background-b: #004030;
+    --color-text: #BBEEBB;
     --color-accent-red: #FF0000;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: var(--color-background);
-    color: var(--color-primary);
+    background-color: black;
+    color: var(--color-text);
     font-family: "Roboto Mono", "Courier New", monospace;
     display: flex;
     flex-direction: column;
@@ -21,15 +26,19 @@ html, body {
     text-align: center;
 }
 
-.title, .subtitle{
+.title, .subtitle {
     text-align: center;
     margin: 0 0 10px 0;
+    font-family: "Platypi", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
 }
 
-.organizer{
-    border: var(--color-primary) solid 2px;
-    border-radius: 5px;
-    padding: 10px;
+.main {
+    background-image: linear-gradient(var(--color-background-b), var(--color-background-a));
+    border-radius: 8px;
+    padding: 16px;
     min-width: 512px;
     display: flex;
     flex-direction: column;
@@ -38,42 +47,44 @@ html, body {
     text-align: left;
 }
 
-.organizer > *{
+.main > * {
     width: 100%;
+
 }
 
-.field-button{
+.field-button {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 16px;
+    padding: 8px;
 }
+
 .field-button > * {
+    all: unset;
+    box-sizing: border-box;
+    border-radius: 8px;
     min-height: 32px;
 }
 
-.field-button > label{
+.field-button > label {
     display: none;
 }
 
-.prompt {
-    border-radius: 5px;
-    flex: 3 1 25%;
-    background-color: black;
+.input {
+    flex: 7 1 15%;
+    background-color: var(--color-secondary);
     font-size: 1rem;
     text-align: left;
-    border: var(--color-primary) solid 2px;
-    color: var(--color-primary);
+    padding: 0 8px 0 8px;
 }
 
 .button {
-    border-radius: 5px;
-    flex: 1 1 25%;
+    flex: 1 1 15%;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    border: var(--color-primary) solid 2px;
-    color: var(--color-primary);
+    background-color: var(--color-secondary);
 }
 
 .interactive {
@@ -81,29 +92,26 @@ html, body {
     cursor: pointer;
 }
 
-.interactive:hover {
+.interactive:hover, .interactive:focus {
     background-color: black;
     color: var(--color-accent);
     border: var(--color-accent) solid 2px;
     box-shadow: 0 0 16px 4px var(--color-accent);
 }
 
-.interactive:focus{
-    border: var(--color-accent) solid 2px;
-    box-shadow: 0 0 16px 4px var(--color-accent);
-}
 
-.interactive:active{
+.interactive:active {
     background-color: var(--color-accent);
-    color: var(--color-background);
-    border: var(--color-background) solid 2px;
+    color: var(--color-background-a);
+    border: var(--color-background-a) solid 2px;
 }
 
-.information-section{
+.information-section {
     margin-top: 10px;
-    display:flex;
+    display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 16px;
+    padding: 8px;
 }
 
 .information-section > * {
@@ -111,11 +119,7 @@ html, body {
     margin: 0;
 }
 
-.version-sticker{
+.version-sticker {
     text-align: right;
-}
-
-.madeby-sticker{
-    text-align: left;
 }
 
