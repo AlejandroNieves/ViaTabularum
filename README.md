@@ -10,34 +10,43 @@
 - Saves your preference in browser storage.
 - Simple UI with an input field and save button.
 
-## Installation
+## How to use
+
+1. Click on the extension icon on the toolbar
+2. insert a valid URL you wish to see when opening new tabs.
+3. Click on **SET**.
+4. Now, when you open new tabs, the extension will redirect to the specified URL.
+
+## Installing the addon
+
+You can download the addon from the Firefox extensions page.
+If you want to directly download the source and try it as a temporary debug extension, do as follows:
 
 1. Download or clone this repository.
 2. Open Firefox and go to `about:debugging#/runtime/this-firefox`.
 3. Click **Load Temporary Add-on**.
 4. Select the `manifest.json` file from this repo.
-5. Open a new tab — it should redirect to your chosen URL.
+5. The addon should be active now and available for use on the browser toolbar.
 
 ## Usage
 
 1. Click on the extension icon (also known as browser action) on Firefox's toolbar. 
 2. Enter your desired new tab URL on the small form.
-3. Click **Save**.
+3. Click **SET**.
 4. Opening a new tab will now redirect to the URL you set.
 
 ## Development
 
 - Written in plain JavaScript.
-- Uses `browser.storage.local` for storage persistence. Works within Firefox extensions.
+- Uses `browser.storage.local` for storage persistence. Works only within Firefox extensions.
 - Main files:
     - `manifest.json` — extension manifest
     - `constants.js` — constants and defaults
+    - `feedback_handler.js` — controls the feedback LED light and text
     - `url_handler.js` — storage helpers
     - `options.js` — UI logic for the options page
-
-## Future features
-
-- Implement URL Validation.
+    - `newtab.html` — redirection page
+    - `via_tabularum.html` — UI of the extension 
 
 
 ## License
@@ -47,10 +56,14 @@ You are free to use, modify, and redistribute it, but any derivative work must a
 
 ## About the Author
 
-I'm a back-end software developer with complementary experience in front-end.  
-I specialize in Java and Spring and am proficient with database engines such as PostgreSQL and MongoDB.  
-For front-end development, I usually prefer the basic HTML/CSS/JS stack, though I also work with frameworks like Angular.
+I am a **back-end software developer** with complementary experience in front-end development.
+I graduated with honors as a technician in multiplatform application development, and my professional experience includes working with microservices, REST APIs, ETL processes, and web applications.
 
-I enjoy creating small, simple applications that solve everyday problems.
+My main expertise lies in **Java**, **Spring Framework**, and database engines such as **PostgreSQL** and MongoDB. For front-end development, I typically work with the core HTML/CSS/JavaScript stack, as well as frameworks like Angular when needed.
 
-I speak Spanish, English and Esperanto. I'm also a French beginner, currently in training.
+I particularly enjoy creating small, simple applications that solve everyday problems.
+
+I am fluent in **Spanish** and **English**, and also speak Esperanto. I'm currently training in French.
+
+- [LinkedIn](https://www.linkedin.com/in/alejandro-n-970b93240/)
+- [Webpage (Spanish) - www.alejandronieves.es](https://www.alejandronieves.es/)
