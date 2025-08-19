@@ -41,8 +41,8 @@ function processURL(url){
     let processedUrl = url.trim()
     if (!isValidUrl(processedUrl)) {
         processedUrl = "https://" + processedUrl;
-        if (!isValidUrl(processedUrl)) return null;
-        return processedUrl;
+        if (isValidUrl(processedUrl) && processedUrl.includes('.')) return processedUrl;
+        return null;
     }
     return processedUrl;
 }
