@@ -2,17 +2,26 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/options.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&family=Ysabeau+Office:ital,wght@0,1..1000;1,1..1000&display=swap" rel="stylesheet">
     <script type="module" src="js/url_elements.js"></script>
 </head>
 <body>
 <div class="main">
+    <div class="logo_holder">
+        <img class="vt_logo" src="icons/icon_viatabularum.png" alt="Via Tabularum Logo"/>
+    </div>
     <h2 class="title">VIA TABULARUM</h2>
     <p class="subtitle">New tab redirection</p>
     <div class="field-button">
         <label for="vt_new_tab_url_input"></label>
         <input type="text" id="vt_new_tab_url_input" class="input interactive"/>
         <div id="vt_save_new_tab_url_button" class="button interactive">SET</div>
+    </div>
+    <div class="feedback-section">
+        <div class="indicator"></div>
+        <p>Status</p>
     </div>
     <div class="information-section">
         <p class="version-sticker">V1.0</p>

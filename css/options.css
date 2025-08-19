@@ -5,20 +5,20 @@
     --color-background-a: #082E20;
     --color-background-b: #004030;
     --color-text: #BBEEBB;
-    --color-accent-red: #FF0000;
+    --color-accent-red: #BB2222;
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
 }
 
-a{
-    color: inherit;        /* use same color as surrounding text */
+a {
+    color: inherit; /* use same color as surrounding text */
     text-decoration: none; /* remove underline */
-    cursor: pointer;       /* keep pointer cursor */
+    cursor: pointer; /* keep pointer cursor */
 }
 
-a:hover{
+a:hover {
     color: var(--color-accent);
     text-shadow: 0 0 20px var(--color-accent);
     transition: all 0.3s ease;
@@ -30,7 +30,7 @@ html, body {
     height: 100%;
     background-color: black;
     color: var(--color-text);
-    font-family: "Roboto Mono", "Courier New", monospace;
+    font-family: "Ysabeau Office", "Roboto Mono", "Courier New", monospace;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,14 +120,13 @@ html, body {
 }
 
 
-
 .information-section {
     margin-top: 10px;
     display: flex;
     gap: 16px;
     padding: 8px;
     justify-content: space-between; /* pushes first left, last right */
-    align-items: center;            /* vertical alignment if needed */
+    align-items: center; /* vertical alignment if needed */
 }
 
 .information-section > * {
@@ -142,3 +141,32 @@ html, body {
 .information-section > *:last-child {
     text-align: right;
 }
+
+.feedback-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.indicator{
+    border-radius: 16px;
+    margin: 0;
+    padding: 0;
+    height: 16px;
+    width: 16px;
+    background-color: var(--color-accent-red);
+    box-shadow: 0 0 16px 4px var(--color-accent-red);
+}
+
+.logo_holder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vt_logo {
+    width: 64px;
+    height: auto;
+}
+

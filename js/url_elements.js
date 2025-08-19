@@ -10,10 +10,18 @@ document.addEventListener("DOMContentLoaded", async () => {
         inputElement.value = await getURL();
     }
 
+    async function buttonAction() {
+        const inputFieldValue = inputElement.value.trim() || DEFAULT_URL;
+        await setURL(inputFieldValue);
+    }
+
     function setButtonLogic() {
-        buttonElement.addEventListener("click", async () => {
-            const inputFieldValue = inputElement.value.trim() || DEFAULT_URL
-            await setURL(inputFieldValue);
+        buttonElement.addEventListener("click", buttonAction);
+        inputElement.addEventListener("keydown", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                buttonAction();
+            }
         });
     }
 
