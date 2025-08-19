@@ -12,6 +12,18 @@
     box-sizing: border-box;
 }
 
+a{
+    color: inherit;        /* use same color as surrounding text */
+    text-decoration: none; /* remove underline */
+    cursor: pointer;       /* keep pointer cursor */
+}
+
+a:hover{
+    color: var(--color-accent);
+    text-shadow: 0 0 20px var(--color-accent);
+    transition: all 0.3s ease;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -36,6 +48,7 @@ html, body {
 }
 
 .main {
+    all: unset;
     background-image: linear-gradient(var(--color-background-b), var(--color-background-a));
     border-radius: 8px;
     padding: 16px;
@@ -88,7 +101,7 @@ html, body {
 }
 
 .interactive {
-    transition: all 0.3s ease; /* Smooth transition for the glow effect */
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
@@ -106,12 +119,15 @@ html, body {
     border: var(--color-background-a) solid 2px;
 }
 
+
+
 .information-section {
     margin-top: 10px;
     display: flex;
-    flex-direction: row;
     gap: 16px;
     padding: 8px;
+    justify-content: space-between; /* pushes first left, last right */
+    align-items: center;            /* vertical alignment if needed */
 }
 
 .information-section > * {
@@ -119,7 +135,10 @@ html, body {
     margin: 0;
 }
 
-.version-sticker {
-    text-align: right;
+.information-section > *:first-child {
+    text-align: left;
 }
 
+.information-section > *:last-child {
+    text-align: right;
+}

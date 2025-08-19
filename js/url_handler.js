@@ -1,8 +1,4 @@
-import {STORAGE_KEY, DEFAULT_URL} from './constants.js';
-
-const ERROR_INVALID_URL_STRING = "Invalid URL string.";
-const ERROR_READING = "Error reading from local storage.";
-const ERROR_WRITING = "Error writing to local storage.";
+import {DEFAULT_URL, ERROR_INVALID_URL_STRING, ERROR_READING, ERROR_WRITING, STORAGE_KEY} from './constants.js';
 
 export async function getURL() {
     try {

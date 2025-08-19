@@ -6,7 +6,7 @@
     }
   },
   "name": "ViaTabularum",
-  "version": "1.2",
+  "version": "1.0",
   "description": "A very simple addon to control where new tabs redirect to.",
   "permissions": [
     "tabs",
