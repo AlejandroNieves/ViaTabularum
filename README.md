@@ -16,6 +16,7 @@
 2. insert a valid URL you wish to see when opening new tabs.
 3. Click on **SET**.
 4. Now, when you open new tabs, the extension will redirect to the specified URL.
+5. You can specify the protocol. If no protocol is specified, `https://` will be assumed.
 
 ## Installing the addon
 
