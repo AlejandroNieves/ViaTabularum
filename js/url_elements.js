@@ -1,5 +1,6 @@
-import {BUTTON, DEFAULT_URL, ERROR_DOM_ELEMENTS, INPUT} from './constants.js';
+import {BUTTON, DEFAULT_URL, ERROR_DOM_ELEMENTS, ERROR_INVALID_URL_STRING, ERROR_WRITING, INPUT} from './constants.js';
 import {getURL, setURL} from "./url_handler.js";
+import {feedback, LED} from "./feedback_handler.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -12,7 +13,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     async function buttonAction() {
         const inputFieldValue = inputElement.value.trim() || DEFAULT_URL;
-        await setURL(inputFieldValue);
+        try {
+            await setURL(inputFieldValue);
+        } catch (e) {
+            feedback(LED.ERROR, ERROR_INVALID_URL_STRING);
+        }
     }
 
     function setButtonLogic() {
@@ -31,6 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (!elementsExist()) {
         console.error(ERROR_DOM_ELEMENTS);
+        feedback(LED.ERROR, ERROR_DOM_ELEMENTS);
         return;
     }
 

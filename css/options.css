@@ -6,6 +6,31 @@
     --color-background-b: #004030;
     --color-text: #BBEEBB;
     --color-accent-red: #BB2222;
+
+    --led-on: #51FF95;
+    --led-error: #BB2222;
+    --led-warn: #BBBB22;
+    --led-off: #667766;
+    --led-transition: 400ms ease-in-out;
+}
+
+.led-status-ok {
+    background-color: var(--led-on);
+    box-shadow: 0 0 16px 4px var(--led-on);
+}
+
+.led-status-warn {
+    background-color: var(--led-warn);
+    box-shadow: 0 0 16px 4px var(--led-warn);
+}
+
+.led-status-error {
+    background-color: var(--led-error);
+    box-shadow: 0 0 16px 4px var(--led-error);
+}
+
+.led-status-off {
+    background-color: var(--led-off);
 }
 
 *, *::before, *::after {
@@ -145,18 +170,19 @@ html, body {
 .feedback-section {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+    padding: 0 16px 0 16px;
     gap: 16px;
 }
 
-.indicator{
+.feedback-led {
     border-radius: 16px;
     margin: 0;
     padding: 0;
     height: 16px;
     width: 16px;
-    background-color: var(--color-accent-red);
-    box-shadow: 0 0 16px 4px var(--color-accent-red);
+    background-color: var(--led-off);
+    transition: var(--led-transition);
 }
 
 .logo_holder {
