@@ -1,4 +1,4 @@
-import {BUTTON, DEFAULT_URL, ERROR_DOM_ELEMENTS, ERROR_INVALID_URL_STRING, ERROR_WRITING, INPUT} from './constants.js';
+import {BUTTON, DEFAULT_URL, ERROR_DOM_ELEMENTS, ERROR_INVALID_URL_STRING, INPUT} from './constants.js';
 import {getURL, setURL} from "./url_handler.js";
 import {feedback, LED} from "./feedback_handler.js";
 

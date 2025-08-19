@@ -1,4 +1,4 @@
-import {BUTTON, FEEDBACK_LED, FEEDBACK_TEXT} from "./constants.js";
+import {FEEDBACK_LED, FEEDBACK_TEXT} from "./constants.js";
 
 export const LED = Object.freeze({
     OFF: "OFF",
