@@ -18,6 +18,10 @@
 4. Now, when you open new tabs, the extension will redirect to the specified URL.
 5. You can specify the protocol. If no protocol is specified, `https://` will be assumed.
 
+<div align="center" style="display: flex; flex-direction: column; align-items: center">
+<img align="center" width="544" height="321" alt="tabularum" src="https://github.com/user-attachments/assets/270153b5-fb18-4796-ab0a-b60a02e1895a" />
+</div>
+
 ## Installing the addon
 
 You can download the addon from the Firefox extensions page.
