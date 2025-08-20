@@ -29,13 +29,6 @@ If you want to directly download the source and try it as a temporary debug exte
 4. Select the `manifest.json` file from this repo.
 5. The addon should be active now and available for use on the browser toolbar.
 
-## Usage
-
-1. Click on the extension icon (also known as browser action) on Firefox's toolbar. 
-2. Enter your desired new tab URL on the small form.
-3. Click **SET**.
-4. Opening a new tab will now redirect to the URL you set.
-
 ## Development
 
 - Written in plain JavaScript.
