@@ -7,10 +7,20 @@ document.addEventListener("DOMContentLoaded", async () => {
     const inputElement = document.getElementById(INPUT);
     const buttonElement = document.getElementById(BUTTON);
 
+    /**
+     * When the extension is loaded, the stored URL will be shown in the input field, if it exists.
+     * @return {Promise<void>}
+     */
     async function fillInputWithStoredURL() {
         inputElement.value = await getURL();
     }
 
+    /**
+     * Button logic. Attempts to store the specified URL.
+     * If the input is empty, the default URL will be used instead.
+     * Any error here will turn the LED red.
+     * @return {Promise<void>}
+     */
     async function buttonAction() {
         const inputFieldValue = inputElement.value.trim() || DEFAULT_URL;
         try {
@@ -20,6 +30,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     }
 
+    /**
+     * Sets the button events both when clicked and when pressing enter while using the input field.
+     */
     function setButtonLogic() {
         buttonElement.addEventListener("click", buttonAction);
         inputElement.addEventListener("keydown", (e) => {
@@ -30,6 +43,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
+    /**
+     * Check if essential elements exist.
+     * @return {HTMLElement}
+     */
     function elementsExist() {
         return (inputElement && buttonElement);
     }

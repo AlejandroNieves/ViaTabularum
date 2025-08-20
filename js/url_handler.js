@@ -23,20 +23,30 @@ export async function setURL(url) {
         const processedUrl = processURL(url);
         let canUseUrl = (processedUrl !== null);
         let checkedUrl = (canUseUrl) ? processedUrl : DEFAULT_URL;
-            await browser.storage.local.set({[STORAGE_KEY]: checkedUrl});
-            if (canUseUrl) {
-                feedback(LED.ON, STATUS_OK_WRITING);
-                return true;
-            }
-            feedback(LED.WARNING, ERROR_INVALID_URL_STRING);
-            return false;
+        await browser.storage.local.set({[STORAGE_KEY]: checkedUrl});
+        if (canUseUrl) {
+            feedback(LED.ON, STATUS_OK_WRITING);
+            return true;
+        }
+        feedback(LED.WARNING, ERROR_INVALID_URL_STRING);
+        return false;
     } catch (e) {
         feedback(LED.ERROR, ERROR_WRITING);
         return false;
     }
 }
 
-function processURL(url){
+/**
+ * Normalizes and validates a URL string.
+ * - Returns `null` if the input is not a string or cannot be validated as a proper URL.
+ * - Trims whitespace from the input.
+ * - If the string is not a valid URL, it attempts to prepend `https://`.
+ * - The final URL, if given `https://` at the start, must contain at least one dot (".") to be considered valid.
+ *
+ * @param url
+ * @return {string|null}
+ */
+function processURL(url) {
     if (typeof url !== "string") return null;
     let processedUrl = url.trim()
     if (!isValidUrl(processedUrl)) {
@@ -47,6 +57,11 @@ function processURL(url){
     return processedUrl;
 }
 
+/**
+ * A simple function to check if a given string can be converted to a URL
+ * @param input
+ * @return {boolean}
+ */
 function isValidUrl(input) {
     try {
         new URL(input);
