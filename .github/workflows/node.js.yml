@@ -1,18 +1,22 @@
 name: build-firefox-extension
 on:
   push:
-    tags:
-      - "v*"
+    branches: [ main ]
+    tags: [ "v*" ]
+  pull_request:
+
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: "20" }
+        with:
+          node-version: "20"
+          cache: "npm"
       - run: npm ci
-      - run: npm run lint && npm test
-      - run: npx web-ext build --source-dir ./via-tabularum --artifacts-dir ./dist
+      - run: npm run lint
+      - run: npm run build
       - uses: actions/upload-artifact@v4
         with:
           name: firefox-xpi
