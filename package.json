@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "web-ext lint --source-dir ./via-tabularum",
+    "prebuild": "node ./scripts/version_sync.js",
     "build": "web-ext build --source-dir ./via-tabularum --artifacts-dir ./dist"
   },
   "repository": {
