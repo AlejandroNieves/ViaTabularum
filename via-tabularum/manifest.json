@@ -6,7 +6,7 @@
     }
   },
   "name": "ViaTabularum",
-  "version": "1.0",
+  "version": "1.1.0",
   "description": "A very simple addon to control where new tabs redirect to.",
   "permissions": [
     "tabs",
@@ -23,17 +23,19 @@
     "512": "icons/icon_viatabularum.png"
   },
   "action": {
-    "theme_icons": [{
-      "dark": "icons/icon_viatabularum_16.png",
-      "light": "icons/icon_viatabularum_16.png",
-      "size": 16
-    }, {
-      "dark": "icons/icon_viatabularum_32.png",
-      "light": "icons/icon_viatabularum_32.png",
-      "size": 32
-    }],
+    "theme_icons": [
+      {
+        "dark": "icons/icon_viatabularum_16.png",
+        "light": "icons/icon_viatabularum_16.png",
+        "size": 16
+      },
+      {
+        "dark": "icons/icon_viatabularum_32.png",
+        "light": "icons/icon_viatabularum_32.png",
+        "size": 32
+      }
+    ],
     "default_popup": "via_tabularum.html",
     "default_title": "Via Tabularum"
   }
-
 }

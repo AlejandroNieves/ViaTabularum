@@ -8,6 +8,7 @@ export const DEFAULT_URL = "about:blank"
 
 export const BUTTON = "vt_save_new_tab_url_button";
 export const INPUT = "vt_new_tab_url_input";
+export const VERSION = "vt_version";
 export const FEEDBACK_LED = "feedback-led";
 export const FEEDBACK_TEXT = "feedback-text";
 
@@ -19,3 +20,4 @@ export const ERROR_DOM_ELEMENTS = "Error loading extension";
 export const ERROR_INVALID_URL_STRING = "URL is invalid — using default";
 export const ERROR_READING = "Error reading URL - using default";
 export const ERROR_WRITING = "Error saving the new URL";
+export const ERROR_MANIFEST_NOT_FOUND = "Manifest could not be retrieved.";
