@@ -19,7 +19,8 @@
 5. You can specify the protocol. If no protocol is specified, `https://` will be assumed.
 
 <div align="center" style="display: flex; flex-direction: column; align-items: center">
-<img align="center" width="544" height="321" alt="tabularum" src="https://github.com/user-attachments/assets/270153b5-fb18-4796-ab0a-b60a02e1895a" />
+<img align="center" width="553" height="326" alt="tabularum" src="https://github.com/user-attachments/assets/dcf8839d-6450-4bae-8e8c-c4ecbc2199d9" />
+
 </div>
 
 ## Installing the addon
