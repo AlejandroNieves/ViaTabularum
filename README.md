@@ -1,5 +1,5 @@
 <div align="center" style="display: flex; flex-direction: column; align-items: center">
-<img src="icons/icon_viatabularum.png" alt="Via Tabularum Logo" width="256px" height="256px"/>
+<img src="via-tabularum/icons/icon_viatabularum.png" alt="Via Tabularum Logo" width="256px" height="256px"/>
 <h1>Via Tabularum</h1>
 <p>A very simple Firefox extension to control where new tabs redirect to.</p>
 </div>
