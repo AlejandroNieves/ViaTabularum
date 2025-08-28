@@ -1,11 +1,13 @@
-import {BUTTON, DEFAULT_URL, ERROR_DOM_ELEMENTS, ERROR_INVALID_URL_STRING, INPUT} from './constants.js';
+import {BUTTON, DEFAULT_URL, ERROR_DOM_ELEMENTS, ERROR_INVALID_URL_STRING, INPUT, VERSION} from './constants.js';
 import {getURL, setURL} from "./url_handler.js";
 import {feedback, LED} from "./feedback_handler.js";
+import {getVersion} from "./manifest.js";
 
 document.addEventListener("DOMContentLoaded", async () => {
 
     const inputElement = document.getElementById(INPUT);
     const buttonElement = document.getElementById(BUTTON);
+    const versionElement = document.getElementById(VERSION);
 
     /**
      * When the extension is loaded, the stored URL will be shown in the input field, if it exists.
@@ -57,6 +59,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
+    function showVersion() {
+        versionElement.textContent = `V${getVersion()}`;
+    }
+
     await fillInputWithStoredURL();
     setButtonLogic()
+    showVersion();
 });

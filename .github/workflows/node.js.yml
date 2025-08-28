@@ -1,0 +1,34 @@
+name: build-firefox-extension
+on:
+  push:
+    branches: [ main ]
+    tags: [ "v*" ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run prebuild
+      - run: npm run build
+
+      - name: Compute checksum
+        run: sha256sum dist/*.xpi > dist/SHA256SUMS.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: firefox-xpi
+          path: |
+            dist/*.xpi
+            dist/SHA256SUMS.txt
+          retention-days: 180
