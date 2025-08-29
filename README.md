@@ -24,16 +24,39 @@
 
 </div>
 
-## Installing the addon
+## Build Instructions
 
-You can download the addon from the Firefox extensions page.
-If you want to directly download the source and try it as a temporary debug extension, do as follows:
+### 1. Clone the repository
 
-1. Download or clone this repository.
-2. Open Firefox and go to `about:debugging#/runtime/this-firefox`.
-3. Click **Load Temporary Add-on**.
-4. Select the `manifest.json` file from this repo.
-5. The addon should be active now and available for use on the browser toolbar.
+### 2. Install dependencies
+
+Requires [Node.js 22+](https://nodejs.org/) and [npm](https://docs.npmjs.com/).
+
+```bash
+npm ci
+```
+
+### 3. Build the extension
+
+```bash
+npm run build
+```
+
+The packaged extension will be created inside the `dist/` directory.
+By default, the build output is:
+
+  ```
+  dist/viatabularum-<version>.zip
+  ```
+
+## How to test the addon
+
+To try the build as a temporary debug extension, do as follows:
+
+1. Open Firefox and go to `about:debugging#/runtime/this-firefox`.
+2. Click **Load Temporary Add-on**.
+3. Select the build .zip file, or the `manifest.json` file inside, if you unzipped it.
+4. The addon should be active now and available for use on the browser toolbar.
 
 ## Development
 
@@ -46,8 +69,7 @@ If you want to directly download the source and try it as a temporary debug exte
     - `url_handler.js` — storage helpers
     - `options.js` — UI logic for the options page
     - `newtab.html` — redirection page
-    - `via_tabularum.html` — UI of the extension 
-
+    - `via_tabularum.html` — UI of the extension
 
 ## License
 
@@ -57,9 +79,12 @@ You are free to use, modify, and redistribute it, but any derivative work must a
 ## About the Author
 
 I am a **back-end software developer** with complementary experience in front-end development.
-I graduated with honors as a technician in multiplatform application development, and my professional experience includes working with microservices, REST APIs, ETL processes, and web applications.
+I graduated with honors as a technician in multiplatform application development, and my professional experience
+includes working with microservices, REST APIs, ETL processes, and web applications.
 
-My main expertise lies in **Java**, **Spring Framework**, and database engines such as **PostgreSQL** and MongoDB. For front-end development, I typically work with the core HTML/CSS/JavaScript stack, as well as frameworks like Angular when needed.
+My main expertise lies in **Java**, **Spring Framework**, and database engines such as **PostgreSQL** and MongoDB. For
+front-end development, I typically work with the core HTML/CSS/JavaScript stack, as well as frameworks like Angular when
+needed.
 
 I particularly enjoy creating small, simple applications that solve everyday problems.
 
