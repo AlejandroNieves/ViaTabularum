@@ -23,12 +23,12 @@ jobs:
       - run: npm run build
 
       - name: Compute checksum
-        run: sha256sum dist/*.xpi > dist/SHA256SUMS.txt
+        run: sha256sum dist/*.zip > dist/SHA256SUMS.txt
 
       - uses: actions/upload-artifact@v4
         with:
-          name: firefox-xpi
+          name: firefox-build
           path: |
-            dist/*.xpi
+            dist/*.zip
             dist/SHA256SUMS.txt
           retention-days: 180
